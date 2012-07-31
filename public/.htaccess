@@ -1,0 +1,8 @@
+
+RewriteEngine On
+
+# Hand out to rails.
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ balancer://unicorn%{REQUEST_URI} [P,QSA,L]
+
