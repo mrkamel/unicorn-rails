@@ -49,6 +49,8 @@ do_start()
   echo "Starting unicorn."
 
   /sbin/start-stop-daemon --start --chuid $USER --group $GROUP --user $USER --pidfile $PIDFILE --make-pidfile --background --chdir $WWW_ROOT --exec $BUNDLE_COMMAND -- exec $UNICORN_COMMAND -c $UNICORN_CONFIG -E $ENVIRONMENT
+  /bin/sleep 3
+  /bin/chown $USER:$GROUP $PIDFILE
 
   return 0
 }
