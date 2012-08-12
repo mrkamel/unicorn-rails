@@ -94,6 +94,7 @@ do_reload() {
 
     echo "Reloading unicorn."
 
+    /bin/kill -s SIGUSR1 $CURRENT_PID
     /bin/kill -s SIGUSR2 $CURRENT_PID
 
     # Unicorn itself or the before_fork hook should send a QUIT
