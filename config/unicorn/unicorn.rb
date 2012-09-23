@@ -5,7 +5,7 @@ worker_processes 3
 working_directory rails_root
 stderr_path File.join(rails_root, "log/unicorn.stderr.log")
 pid File.join(rails_root, "tmp/pids/unicorn.pid")
-listen 3000
+listen "127.0.0.1:3000"
 timeout 40
 preload_app true
 
