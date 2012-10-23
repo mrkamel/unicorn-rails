@@ -17,7 +17,7 @@ before_fork do |server, worker|
   # Send QUIT signal to old master, if the old master
   # is still alive.
 
-  old_pid = File.join(RAILS_ROOT, "tmp/pids/unicorn.pid.oldbin")
+  old_pid = File.join(Rails.root, "tmp/pids/unicorn.pid.oldbin")
 
   if File.exists?(old_pid) && server.pid != old_pid
     begin
